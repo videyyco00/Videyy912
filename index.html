@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Viral Terbaru</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f0f0f;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      padding: 16px;
+      background: #1a1a1a;
+      color: #fff;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    header h1 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px;
+      background: #1a1a1a;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .tags a {
+      background: #2a2a2a;
+      padding: 6px 14px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: #e0e0e0;
+      font-size: 13px;
+    }
+    .video-container {
+      flex: 1;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+    }
+    video {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+    }
+    .video-info {
+      padding: 15px;
+      background: #1a1a1a;
+      text-align: center;
+    }
+    .join-section {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+    }
+    .btn {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-telegram { background: #0088cc; color: #fff; }
+    .btn-whatsapp { background: #25d366; color: #fff; }
+    footer {
+      text-align: center;
+      padding: 16px;
+      background: #1a1a1a;
+      font-size: 13px;
+      color: #888;
+    }
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #333;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .notification.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <header>
+    <h1>🔥 Video Viral Terbaru 🔥</h1>
+  </header>
+
+  <div class="tags">
+    <a href="https://otieu.com/4/10360084">📁 VIRAL</a>
+    <a href="https://otieu.com/4/10360084">📁 PRANK OJOL</a>
+    <a href="https://otieu.com/4/10360084">📁 LIVE</a>
+    <a href="https://otieu.com/4/10360084">📁 SELEBGRAM</a>
+    <a href="https://otieu.com/4/10360084">📁 HIJAB</a>
+  </div>
+
+  <div class="video-container">
+    <video id="myVideo" controls playsinline>
+      <source src="https://cdn.videy.co/8z3eRJyb1.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="video-info">
+    <h2>Video Viral Terbaru</h2>
+    <p>Tonton video viral terbaru yang sedang trending.</p>
+  </div>
+
+  <div class="join-section">
+    <a href="https://t.me/+sUi-nvRiN5IyNDc1" class="btn btn-telegram">Join Telegram</a>
+    <a href="https://whatsapp.com/channel/0029Vb6Scv8ISTkDg8RP1g2Q" class="btn btn-whatsapp">Join WhatsApp</a>
+  </div>
+
+  <footer>
+    © 2025 Video Viral
+  </footer>
+
+  <div class="notification" id="notification">
+    Terima kasih telah menonton!
+  </div>
+</div>
+
+<script>
+  const video = document.getElementById("myVideo");
+  const notification = document.getElementById("notification");
+  const redirectUrl = "https://otieu.com/4/10360084";
+  let hasRedirectedOnPlay = false;
+
+  function openAd(url) {
+    const newTab = window.open(url, '_blank');
+    if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
+      window.location.href = url;
+    }
+  }
+
+  // IKLAN SAAT PLAY PERTAMA (AMAN)
+  video.addEventListener('play', function () {
+    if (!hasRedirectedOnPlay) {
+      openAd(redirectUrl);
+      hasRedirectedOnPlay = true;
+    }
+  });
+
+  // IKLAN SAAT VIDEO SELESAI
+  video.addEventListener('ended', function () {
+    openAd(redirectUrl);
+    notification.classList.add('show');
+    setTimeout(() => notification.classList.remove('show'), 5000);
+  });
+
+  // IKLAN SAAT KLIK TAG
+  document.querySelectorAll('.tags a').forEach(tag => {
+    tag.addEventListener('click', function (e) {
+      e.preventDefault();
+      openAd(this.href);
+    });
+  });
+</script>
+
+</body>
+</html>
